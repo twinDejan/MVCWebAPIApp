@@ -78,5 +78,15 @@ namespace MVCPresentationLayer.Controllers
             }
             return employees;
         }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
     }
 }

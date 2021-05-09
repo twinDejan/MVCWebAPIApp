@@ -6,30 +6,34 @@
 
 <h2>Employee List</h2>
 <div>
-    <table>
+    <table class="table">
         @{
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Contact Number</th>
-                <th>Address</th>
-            </tr>
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Contact Number</th>
+                    <th scope="col">Address</th>
+                </tr>
+            </thead>
             foreach (var employee in Model)
             {
-                <tr>
-                    <td>
-                        @employee.ID
-                    </td>
-                    <td>
-                        @employee.Name
-                    </td>
-                    <td>
-                        @employee.ContactNumber
-                    </td>
-                    <td>
-                        @employee.Address
-                    </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>
+                            @employee.ID
+                        </td>
+                        <td>
+                            @employee.Name
+                        </td>
+                        <td>
+                            @employee.ContactNumber
+                        </td>
+                        <td>
+                            @employee.Address
+                        </td>
+                    </tr>
+                </tbody>
             }
         }
     </table>

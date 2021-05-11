@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCPresentationLayer", "MVC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelLayer", "ModelLayer\ModelLayer.csproj", "{842F8015-E328-40D6-B951-6B904EE45C4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkLayer", "EntityFrameworkLayer\EntityFrameworkLayer.csproj", "{2081C501-0566-4232-B72F-2529E8E50464}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{842F8015-E328-40D6-B951-6B904EE45C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{842F8015-E328-40D6-B951-6B904EE45C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{842F8015-E328-40D6-B951-6B904EE45C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2081C501-0566-4232-B72F-2529E8E50464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2081C501-0566-4232-B72F-2529E8E50464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2081C501-0566-4232-B72F-2529E8E50464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2081C501-0566-4232-B72F-2529E8E50464}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

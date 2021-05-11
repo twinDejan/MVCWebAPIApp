@@ -67,3 +67,10 @@ D:\C#\MVC + Web API\MVCWebAPIApp\WebAPILayer\obj\Debug\WebAPILayer.csproj.CoreCo
 D:\C#\MVC + Web API\MVCWebAPIApp\WebAPILayer\obj\Debug\WebAPILayer.csproj.CopyComplete
 D:\C#\MVC + Web API\MVCWebAPIApp\WebAPILayer\obj\Debug\WebAPILayer.dll
 D:\C#\MVC + Web API\MVCWebAPIApp\WebAPILayer\obj\Debug\WebAPILayer.pdb
+D:\C#\MVC + Web API\MVCWebAPIApp\WebAPILayer\bin\EntityFramework.dll
+D:\C#\MVC + Web API\MVCWebAPIApp\WebAPILayer\bin\EntityFramework.SqlServer.dll
+D:\C#\MVC + Web API\MVCWebAPIApp\WebAPILayer\bin\EntityFrameworkLayer.dll
+D:\C#\MVC + Web API\MVCWebAPIApp\WebAPILayer\bin\EntityFrameworkLayer.pdb
+D:\C#\MVC + Web API\MVCWebAPIApp\WebAPILayer\bin\EntityFrameworkLayer.dll.config
+D:\C#\MVC + Web API\MVCWebAPIApp\WebAPILayer\bin\EntityFramework.xml
+D:\C#\MVC + Web API\MVCWebAPIApp\WebAPILayer\bin\EntityFramework.SqlServer.xml

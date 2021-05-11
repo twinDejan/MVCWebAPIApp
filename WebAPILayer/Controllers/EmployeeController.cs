@@ -8,63 +8,70 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using EntityFrameworkLayer;
 
 namespace WebAPILayer.Controllers
 {
     public class EmployeeController : ApiController
     {
-        List<Employee> employees;
-
+        IEnumerable<EntityFrameworkLayer.Employee> employees;
+        EmployeeManager emanager;
         public EmployeeController()
         {
-            employees = new List<Employee>();
+            emanager = new EmployeeManager();
+            // -Classic way from before
+            //employees = new List<Employee>();
             //employees.Add(new Employee { ID = 1, Name = "John", ContactNumber = 99999999, Address = "Test Address1" });
             //employees.Add(new Employee { ID = 2, Name = "Anna", ContactNumber = 11111111, Address = "Test Address2" });
         }
         // GET api/employee
         [Filters.CustomAuthentication]
-        public IEnumerable<Employee> Get()
+        public IEnumerable<EntityFrameworkLayer.Employee> Get()
         {
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString);
-            string command = "select * from Employee";
-            SqlDataAdapter da = new SqlDataAdapter(command, cn);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            foreach (DataRow dr in ds.Tables[0].Rows)
-            {
-                employees.Add(new Employee
-                {
-                    ID = (int)dr["ID"],
-                    Name = (string)dr["FirstName"] + " " + dr["LastName"].ToString(),
-                    ContactNumber = Convert.ToInt64(dr["ContactNumber"]),
-                    Address = (string)dr["Address"]
-                });
-            }
-            cn.Close();
+            // -Classic way from before
+            //SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString);
+            //string command = "select * from Employee";
+            //SqlDataAdapter da = new SqlDataAdapter(command, cn);
+            //DataSet ds = new DataSet();
+            //da.Fill(ds);
+            //foreach (DataRow dr in ds.Tables[0].Rows)
+            //{
+            //    employees.Add(new Employee
+            //    {
+            //        ID = (int)dr["ID"],
+            //        Name = (string)dr["FirstName"] + " " + dr["LastName"].ToString(),
+            //        ContactNumber = Convert.ToInt64(dr["ContactNumber"]),
+            //        Address = (string)dr["Address"]
+            //    });
+            //}
+            //cn.Close();
+            employees = emanager.GetAllEmployee();
             return employees;
         }
 
         // GET api/employee/1
         [Filters.CustomAuthentication]
-        public Employee Get(int id)
+        public EntityFrameworkLayer.Employee Get(int id)
         {
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString);
-            string command = "select * from Employee where id = " + id;
-            SqlDataAdapter da = new SqlDataAdapter(command, cn);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            foreach (DataRow dr in ds.Tables[0].Rows)
-            {
-                employees.Add(new Employee
-                {
-                    ID = (int)dr["ID"],
-                    Name = (string)dr["FirstName"] + " " + dr["LastName"].ToString(),
-                    ContactNumber = Convert.ToInt64(dr["ContactNumber"]),
-                    Address = (string)dr["Address"]
-                });
-            }
-            cn.Close();
-            return employees.FirstOrDefault(x => x.ID.Equals(id));
+            // -Classic way from before
+            //SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString);
+            //string command = "select * from Employee where id = " + id;
+            //SqlDataAdapter da = new SqlDataAdapter(command, cn);
+            //DataSet ds = new DataSet();
+            //da.Fill(ds);
+            //foreach (DataRow dr in ds.Tables[0].Rows)
+            //{
+            //    employees.Add(new Employee
+            //    {
+            //        ID = (int)dr["ID"],
+            //        Name = (string)dr["FirstName"] + " " + dr["LastName"].ToString(),
+            //        ContactNumber = Convert.ToInt64(dr["ContactNumber"]),
+            //        Address = (string)dr["Address"]
+            //    });
+            //}
+            //cn.Close();
+            //return employees.FirstOrDefault(x => x.ID.Equals(id));
+            return (EntityFrameworkLayer.Employee)emanager.GetEmployeeByID(id);
         }
     }
 }
